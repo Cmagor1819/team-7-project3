@@ -1,0 +1,16 @@
+/* Hover effect for the inactive button */
+.time-btn:hover {
+  background-color: #98c5f1;  /* Light gray background on hover */
+}
+
+/* Active button style */
+.time-btn.active {
+  background-color: #007bff;  /* Blue background */
+  color: white;               /* White text */
+  border-color: #007bff;      /* Blue border */
+}
+
+/* Hover effect for the active button */
+.time-btn.active:hover {
+  background-color: #0056b3;  /* Slightly darker blue for hover effect */
+}

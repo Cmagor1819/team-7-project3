@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bitcoin Price over Time</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="row" style="background-color: #d1d1d1; font-family: 'Segoe UI', sans-serif; margin-bottom: 10px; padding-bottom: 10px; padding-top: 5px;">
+    <div class="col-md-12 p-5 text-center custom-bg">
+      <h1 id = "h1" style = "text-align: center;">Bitcoin</h1>
+      <p style = "text-align: center;">Use the buttons below to change the charts</p>
+    </div>
+  </div>
+    
+    <div class="time-selector" role="group" style="text-align: right;">
+      <button class="time-btn interval-btn" data-interval="1M">1M</button>
+      <button class="time-btn interval-btn" data-interval="6M">6M</button>
+      <button class="time-btn interval-btn" data-interval="YTD">YTD</button>
+      <button class="time-btn interval-btn" data-interval="1Y">1Y</button>
+      <button class="time-btn interval-btn" data-interval="5Y">5Y</button>
+      <button class="time-btn interval-btn" data-interval="Max" style="margin-right: 50px;">Max</button>
+      <button class="time-btn period-btn" data-period="Day">Day</button>
+      <button class="time-btn period-btn" data-period="Month">Month</button>
+      <button class="time-btn period-btn" data-period="Year">Year</button>
+    </div>
+
+    <!-- Add chart-container here -->
+    <div id="chart-container" style="text-align: center; margin-top: 20px;">
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div id="plot"></div>
+        <!-- <div class="card card-body bg-light">
+          <h6>Test Subject ID Number:</h6>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <br>
+        <div  style="background-color: #347AB6;" class="card card-primary">
+          <div class="card-header">
+            <h6 style="font-size: 19px;font-weight:normal;color: white;"class="card-title">Demographic Info</h6>
+          </div>
+          <div style="font-size: 14px ; line-height: 2 ;background-color: white;" id="sample-metadata" class="card-body"></div>
+        </div> -->
+      </div></div>
+      <!-- <div class="col-md-9">
+        <div id="plot"></div>
+      </div>
+    </div> -->
+    <div class="row">
+      <div class="col-md-12">
+        <div id="heat"></div>
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <iframe id="trends-widget-1" title="trends-widget-1" src="https://trends.google.com:443/trends/embed/explore/GEO_MAP?req=%7B%22comparisonItem%22%3A%5B%7B%22keyword%22%3A%22%2Fm%2F05p0rrx%22%2C%22geo%22%3A%22US%22%2C%22time%22%3A%222004-01-01%202025-01-22%22%7D%5D%2C%22category%22%3A0%2C%22property%22%3A%22%22%7D&amp;tz=480&amp;eq=date%3Dall%26geo%3DUS%26q%3D%252Fm%252F05p0rrx%26hl%3Den-US" width="100%" height = "600px" frameborder="0" scrolling="0"></iframe>
+    </div></div>
+  
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="./static/js/app.js"></script>
+
+</body>
+
+</html>
