@@ -5,7 +5,7 @@ let previousPeriod = "Day";    // Assuming "Day" is the default period
 // function to build both charts
 function buildCharts(blnPeriod, blnInterval) {
   
-    d3.json("http://localhost:8000/JAVASCRIPT/static/js/cleaned_data.json").then((data) => {
+    d3.json("https://cmagor1819.github.io/team-7-project3/static/js/cleaned_data.json").then((data) => {
 
     // Get the samples field
     //console.log(data)
@@ -255,7 +255,7 @@ Plotly.newPlot("heat", data2, layout2);
 // Function to run on page load
 
 function init() {
-  d3.json("http://localhost:8000/JAVASCRIPT/static/js/cleaned_data.json").then((data) => {
+  d3.json("https://cmagor1819.github.io/team-7-project3/static/js/cleaned_data.json").then((data) => {
 
     // Wait until the DOM is fully loaded
 
