@@ -115,6 +115,67 @@ binWidthY),
   type: "heatmap",
   hoverongaps: false,
 
+# Load the data
+data = pd.read_csv(‘/mnt/data/cleaned_data.csv’)
+# Extract relevant columns
+volume = data[‘volume’]
+market_cap = data[‘marketCap’]
+close_price = data[‘close’]
+high_price = data[‘high’]
+# Create scatter plot
+plt.figure(figsize=(10, 8))
+scatter = plt.scatter(volume, market_cap, s=close_price / 1000, c=high_price, cmap=‘viridis’, alpha=0.7, edgecolors=‘w’)
+# Add labels and title
+plt.title(“Bitcoin Scatter Plot: Volume vs Market Cap”, fontsize=16)
+plt.xlabel(“Volume”, fontsize=14)
+plt.ylabel(“Market Cap”, fontsize=14)
+# Add color bar
+plt.colorbar(scatter, label=“High Price”)
+# Show the plot
+plt.tight_layout()
+plt.show()
+
+plt.figure(figsize=(14, 7)) 
+plt.plot(last_30_days['timeOpen'], last_30_days['close'], marker='o', linestyle='-', color='blue', markersize=6, linewidth=2)
+
+# Ensure x-axis is limited to 30-day period
+plt.gca().set_xlim([last_30_days['timeOpen'].min(), last_30_days['timeOpen'].max()])
+
+# Set x-axis ticks to correspond to the data points
+plt.gca().xaxis.set_major_locator(mdates.DayLocator())
+
+# Rotate and align the x-axis labels for better readability
+plt.xticks(rotation=45, ha='right')
+
+# Add titles and labels 
+plt.title('Bitcoin Price Changes Over the Last 30 Days', fontsize=18, weight='bold')
+plt.xlabel('Date', fontsize=14)
+plt.ylabel('Price in USD', fontsize=14)
+
+# Add gridlines to improve readability
+plt.grid(True, linestyle='--', alpha=0.7)
+
+# Adjust layout to prevent clipping of labels
+plt.tight_layout()
+
+# Show the plot
+plt.show()
+
+fig2.add_trace(go.Scatter(x = df['timeOpen'], y = df['open'], mode = 'lines', name ='Open Price', line = dict(color = 'blue')))
+
+fig2.update_layout(title = 'Bitcoin Price Over Years', xaxis_title = 'Date', yaxis_title = 'Price (USD)', legend_title = 'Price Type', template = 'plotly_dark')
+
+fig1 = go.Figure(data = [go.Candlestick(x = df['timeOpen'], open = df['open'], high = df['high'], low = df['low'], close = df['close'], name = 'Candlestick'),
+
+fig1.update_layout(xaxis = dict(rangeselector = dict(buttons = list([dict(count = 1, label = '1 Day', step = 'day', stepmode = 'backward'),
+                                                                    dict(count = 7, label = '1 Week', step = 'day', stepmode = 'backward'),
+                                                                    dict(count = 1, label = '1 Month', step = 'month', stepmode = 'backward'),
+                                                                    dict(count = 3, label = '3 Months', step = 'month', stepmode = 'backward'),
+                                                                    dict(count = 1, label = '1 Year', step = 'year', stepmode = 'backward'),
+                                                                    dict(label = 'All', step = 'all'),])),
+                                                                    rangeslider = dict(visible = True),
+                                                                    type = 'date'))
+
 ## Setup and Dependencies
 
 Before starting, ensure you have the following installed:
