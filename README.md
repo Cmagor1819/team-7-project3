@@ -31,7 +31,7 @@ Salary Data comes from Coin Market Cap https://coinmarketcap.com/currencies/bitc
 
 ETF Data comes from Fidelity https://www.fidelity.com/
 
-Here are some basic illustrations of the data flow from acquision and cleaning to storing.
+Here are some basic illustrations of the data flow from acquisition and cleaning to storing.
 ![Slide2](https://github.com/user-attachments/assets/89d37194-a1ec-481a-931d-9373a020b8f2)
 
 ![Slide3](https://github.com/user-attachments/assets/77609f08-fa51-4df4-a3ac-ab4852e6eae4)
@@ -73,7 +73,7 @@ Bitcoin has evolved from an experimental digital currency to a globally recogniz
 
 ##	References for the data source(s)/o	References for any code used that is not your own
 
-The use of ChatGPT was essential in creating various lines of code in the Javascript file. Below is the code the creation of the heatmap.
+The use of ChatGPT was essential in creating various lines of code in the Javascript and Jupyter Notebook files. Below is the code for the creation of the heatmap in the Javascript code.
 
 ``` javascript
   const percentRange = [
@@ -116,6 +116,7 @@ binWidthY),
   hoverongaps: false,
 ```
 
+Below is the code for the creation of the candlestick visualization.
 ```python
 #Load the data
 data = pd.read_csv(‘/mnt/data/cleaned_data.csv’)
