@@ -1,19 +1,16 @@
-// Initialize previous values to default active button values
-let previousInterval = "Max";  // Assuming "Max" is the default interval
-let previousPeriod = "Day";    // Assuming "Day" is the default period
+// Initialize default active button values
+let previousInterval = "Max"; 
+let previousPeriod = "Day";
 
 // function to build both charts
 function buildCharts(blnPeriod, blnInterval) {
   
     d3.json("https://cmagor1819.github.io/team-7-project3/static/js/cleaned_data.json").then((data) => {
 
-    // Get the samples field
-    //console.log(data)
-
     // Get the days
-    
     const timeOpen = data["timeOpen"];
     let days = []
+
     // Get the close price
     const close = data["close"]
 
@@ -21,16 +18,15 @@ function buildCharts(blnPeriod, blnInterval) {
     Object.entries(timeOpen).forEach(([key,value]) => {
     days.push(value);
     });
-    console.log('Days')
-    console.log(days)
-
+    // console.log('Days')
+    // console.log(days)
 
     let closeValues = [];
     Object.values(close).forEach((value) => {
         closeValues.push(value)});
         
-        console.log('close');
-        console.log(closeValues);
+        // console.log('close');
+        // console.log(closeValues);
 
     // Filter data based on blnDate
     let filteredIndices = [];
@@ -55,15 +51,15 @@ function buildCharts(blnPeriod, blnInterval) {
     const sixMonthsAgo = currentTime - 6 * 30 * 24 * 60 * 60 * 1000; // Approx. 6 months
     const oneYearAgo = currentTime - 12 * 30 * 24 * 60 * 60 * 1000; // Approx. 1 year
     const fiveYearsAgo = currentTime - 5 * 365 * 24 * 60 * 60 * 1000; // Approx. 5 years
-    console.log("Current Time:", currentTime);
-    console.log("One Month Ago:", oneMonthAgo);
-    console.log("Six Months Ago:", sixMonthsAgo);
-    console.log("One Year Ago:", oneYearAgo);
-    console.log("Five Years Ago:", fiveYearsAgo);
+    // console.log("Current Time:", currentTime);
+    // console.log("One Month Ago:", oneMonthAgo);
+    // console.log("Six Months Ago:", sixMonthsAgo);
+    // console.log("One Year Ago:", oneYearAgo);
+    // console.log("Five Years Ago:", fiveYearsAgo);
 
     let periodFilter = [];
 
-    // Handle interval filtering
+    // Data filtering based on selection
     if (blnInterval === "1M") {
       console.log("Applying 1 Month filter...");
       periodFilter = filteredIndices.filter((index) => {
@@ -116,10 +112,10 @@ function buildCharts(blnPeriod, blnInterval) {
       return new Date(timestamp).toISOString().split("T")[0]; // Format: YYYY-MM-DD
     });
 
-      console.log("Period Filter Indices:", periodFilter);
-      console.log("Filtered Days (after period filter):", periodFilter.map((index) => days[index]));
-      console.log("Filtered Close Values:", periodFilter.map((index) => closeValues[index]));
-      console.log(convertedDays)
+      // console.log("Period Filter Indices:", periodFilter);
+      // console.log("Filtered Days (after period filter):", periodFilter.map((index) => days[index]));
+      // console.log("Filtered Close Values:", periodFilter.map((index) => closeValues[index]));
+      // console.log(convertedDays)
 
     // Reverse the filteredCloseValues array
     const reversedCloseValues = filteredCloseValues.slice().reverse(); // .slice() creates a copy to avoid mutating the original
@@ -137,19 +133,19 @@ function buildCharts(blnPeriod, blnInterval) {
       if (index === reversedCloseValues.length - 1) return null; // Skip the last value
       return reversedCloseValues[index + 1] - reversedCloseValues[index]; // Next - Current
     });
-      console.log("test")
-      console.log("Percent Change ", percentChange)
-      console.log("dollarchange ",dollarChange)
+      // console.log("test")
+      // console.log("Percent Change ", percentChange)
+      // console.log("dollarchange ",dollarChange)
 
 // Build a Line Chart
 let trace1 = {
   x: convertedDays,
   y: filteredCloseValues,
-  text: filteredCloseValues,  // Tooltip with price data on hover (optional)
-  mode: "lines",  // Change to "lines" for a line chart
+  text: filteredCloseValues,
+  mode: "lines", 
   line: {
-    color: "#17BECF",  // Optional: Set the line color
-    width: 2  // Optional: Set the line width
+    color: "#17BECF",
+    width: 2 
   }
 };
 
@@ -178,13 +174,13 @@ let percentChangeRange = [
   Math.max(...percentChange.filter((val) => val !== null)),
 ];
 
-console.log("Dollar Change Range:", dollarChangeRange);
-console.log("Percent Change Range:", percentChangeRange);
-console.log("test2:");
+// console.log("Dollar Change Range:", dollarChangeRange);
+// console.log("Percent Change Range:", percentChangeRange);
+
 // Bin the data for heatmap
 const binsX = 25; // Number of bins for percentage change
 const binsY = 25; // Number of bins for dollar change
-console.log("binsX:", binsX);
+// console.log("binsX:", binsX);
 
 const percentRange = [
   Math.min(...percentChange.filter((val) => val !== null)),
@@ -249,8 +245,6 @@ Plotly.newPlot("heat", data2, layout2);
 
 });
 }
-
-
 
 // Function to run on page load
 
@@ -320,7 +314,7 @@ function optionChanged() {
       const interval = button.getAttribute("data-interval");
       const period = button.getAttribute("data-period");
 
-      // Use the previously stored values (if any) when calling buildCharts
+      // Use the previously stored values when calling buildCharts
       const newInterval = interval || previousInterval; // Use previousInterval if interval is not set
       const newPeriod = period || previousPeriod; // Use previousPeriod if period is not set
 
@@ -331,15 +325,12 @@ function optionChanged() {
       // Determine if the button is related to interval or period based on the attributes
       if (interval) {
         // It's an interval button
-        //chartContainer.innerHTML = `<p>Displaying data for Interval: ${interval}</p>`;
         buildCharts(previousPeriod, newInterval);  // Call buildCharts with updated interval and previous period
       } else if (period) {
         // It's a period button
-        //chartContainer.innerHTML = `<p>Displaying data for Period: ${period}</p>`;
         buildCharts(newPeriod, previousInterval);  // Call buildCharts with previous interval and updated period
       } else {
         // Default case if no interval or period attribute is present
-        //chartContainer.innerHTML = `<p>Displaying default data.</p>`;
         buildCharts(previousPeriod, previousInterval);  // Call buildCharts with previous values
       }
     });
