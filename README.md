@@ -72,6 +72,49 @@ Lastly, sharing the insights derived from the data should prioritize educational
 Conclusion 
 Bitcoin has evolved from an experimental digital currency to a globally recognized financial asset. Its value and popularity continue to fluctuate due to its speculative nature, evolving regulations, and the broader adoption of blockchain technology. While its future remains uncertain, Bitcoin remains a cornerstone of the cryptocurrency ecosystem and a symbol of financial decentralization.
 
+
+
+
+o	References for the data source(s)/o	References for any code used that is not your own
+
+The use of ChatGPT was essential in creating various lines of code in the 
+Javascript file. Below is the code the creation of the heatmap.
+const percentRange = [
+  Math.min(...percentChange.filter((val) => val !== null)),
+  Math.max(...percentChange.filter((val) => val !== null)),
+];
+const dollarRange = [
+  Math.min(...dollarChange.filter((val) => val !== null)),
+  Math.max(...dollarChange.filter((val) => val !== null)),
+];
+const binWidthX = (percentRange[1] - percentRange[0]) / binsX;
+const binWidthY = (dollarRange[1] - dollarRange[0]) / binsY;
+let z = Array(binsY)
+  .fill(0)
+  .map(() => Array(binsX).fill(0));
+percentChange.slice(1).forEach((percent, index) => {
+  if (percent === null || dollarChange[index + 1] === null) return;
+  const xBin = Math.min(
+    Math.floor((percent - percentRange[0]) / binWidthX),
+    binsX - 1
+  );
+  const yBin = Math.min(
+    Math.floor((dollarChange[index + 1] - dollarRange[0]) / binWidthY),
+    binsY - 1
+  );
+  z[yBin][xBin] += 1; // Increment the count in the appropriate bin
+});
+// Heatmap data and layout
+const maxZ = Math.max(...z.flat());
+const heatmapTrace = {
+  z: z,
+  x: Array.from({ length: binsX }, (_, i) => percentRange[0] + i * 
+binWidthX),
+  y: Array.from({ length: binsY }, (_, i) => dollarRange[0] + i * 
+binWidthY),
+  type: "heatmap",
+  hoverongaps: false,
+
 ## Setup and Dependencies
 
 Before starting, ensure you have the following installed:
