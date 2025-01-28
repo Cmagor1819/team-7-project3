@@ -6,8 +6,8 @@
 - Cameron Magor
 - Mayra Martinez
 
-# Project Overview and Questions
-The purpose of this project is to provide a comprehensive understanding of Bitcoin, its historical price movements, and its potential as an investment. By examining Bitcoin’s origin, technological foundation, and market trends, this project aims to equip readers with the knowledge of bitcoin and what bitcoin is. The project seeks to explore the risks and benefits associated with Bitcoin.
+## Project Overview
+The project focuses on analyzing Bitccoin's historical price movements to provide insights into its markets trends and volatility.  Thorugh visualizations, this project aims to help readers understand Bitcoin's price behavior over time. In addition, this project explores the risks and benefits associated with Bitcoin.
 
 
 ## Tech Stack and Data Acquisition / Manipulation
@@ -36,42 +36,65 @@ Here are some basic illustrations of the data flow from acquisition and cleaning
 
 ![Slide3](https://github.com/user-attachments/assets/77609f08-fa51-4df4-a3ac-ab4852e6eae4)
 
+## Visualizations
 
-As a group, we developed a variety of interactive graphs. Below is an explanation of how these graphs were created for this project.
+### 1. High-Low Scatter Plot
 
-High-low scatter plot that allows you to view the changes of bitcoin that occur in a day, 1 week, 1 month, 3 months, 1 year, and all. This tabs just reveal the price of bitcoin from the previous day, week, month, 3 months, year, and all of the data  
+The high-low scatter plot allows users to view the daily changes in Bitcoin’s price over different timeframes: 1 day, 1 week, 1 month, 3 months, 1 year, or the entire dataset. These tabs reveal Bitcoin's price changes relative to the selected timeframe.
 
-Creating the High-Low Scatter Plot
-Part 1:We begin by examining the column data types to understand the data we are working with. This step helps us identify the correct column names for referencing and facilitates precise data manipulation.
-Part 2:Next, we generate the high-low scatter plot using Matplotlib. Each line in the chart is defined with its corresponding values and colors. We add essential elements such as a title, x-axis and y-axis labels, x-axis ticks, and a legend, providing users with clear insights into the chart's content.
+#### Creating the High-Low Scatter Plot
+- **Part 1:** We begin by examining the column data types to understand the dataset. This step helps identify the correct column names for referencing and facilitates precise data manipulation.  
+- **Part 2:** Using Matplotlib, we generate the high-low scatter plot. Each line in the chart is defined with its corresponding values and colors. Essential elements like a title, x-axis and y-axis labels, x-axis ticks, and a legend are added to provide clear insights into the chart’s content.
 
-Creating the Candlestick Chart
-Part 1:The process starts by constructing the candlestick base, where each line is assigned appropriate values and colors to represent the data accurately.
-Part 2:We then enhance the chart’s appearance and interactivity by updating its layout. This includes adding a graph title, customizing the x-axis and y-axis labels, applying a dark mode template, and enabling a range slider for easier navigation.
-To further improve usability, we configure the x-axis with interactive buttons that allow users to select specific timeframes—past day, week, month, 3 months, 1 year, or the entire dataset. The range slider ensures that it remains visible, and the type = data setting displays the x-axis as dates.
+---
 
-Generating the Interactive Line Chart
-Part 1:We begin by creating the line chart with fig2 = go.Figure(). Traces are added for each price line, with assigned values and colors.
-Part 2:The layout is then updated to include a title, x-axis and y-axis titles, a legend title, and the dark mode template for improved aesthetics. Finally, the chart is displayed using fig2.show().
+### 2. Candlestick Chart
 
-The dashboard features three key charts:
-Bitcoin Price Over Time – This chart tracks Bitcoin’s price, with the option to adjust the time unit to days, months, or years. Switching from days to months or years smooths out volatility by reducing the number of data points. This flexibility is crucial, as investors have different time horizons for liquidating their assets.
+The candlestick chart provides a detailed view of Bitcoin’s daily price movements, including the opening, closing, high, and low prices. Users can interact with the chart using time selectors and a range slider to analyze specific periods.
 
-Dollar Change vs. Percentage Change Heatmap – This dynamic heatmap adjusts based on the selected time period and unit. Given Bitcoin’s long journey from just above $0 to over $100,000, the magnitude of dollar and percentage changes varies significantly depending on the timeframe.
+#### Creating the Candlestick Chart
+- **Part 1:** The process starts with constructing the candlestick base, where each line is assigned appropriate values and colors to accurately represent the data.  
+- **Part 2:** We enhance the chart’s appearance and interactivity by updating its layout. This includes:  
+  - Adding a graph title.  
+  - Customizing the x-axis and y-axis labels.  
+  - Applying a dark mode template.  
+  - Enabling a range slider for navigation.  
+  - Configuring interactive x-axis buttons for selecting timeframes (day, week, month, 3 months, 1 year, or entire dataset). The range slider remains visible, with `type = data` ensuring the x-axis displays dates.
 
-Google Trends Bitcoin Search Interest – This data, sourced directly from Google Trends, assigns a search interest score to each state/region in the U.S. based on Bitcoin-related search activity. Notably, Nevada has the highest score in the country.
+---
 
-When using CoinMarketCap.com to obtain Bitcoin historical data for a project, ethical considerations are paramount to ensure data accuracy, transparency, and compliance with intellectual property rights. Efforts should include proper attribution to CoinMarketCap as the source of the data, adhering to their terms of service, and avoiding unauthorized data scraping. 
+### 3. Interactive Line Chart
 
-Additionally, the analysis must respect user privacy by refraining from collecting personal or identifying information associated with the data. It is essential to present findings objectively, avoiding manipulation or misrepresentation of the data to ensure trustworthiness and credibility. 
+The interactive line chart visualizes Bitcoin’s price movements over time, allowing users to adjust the time unit (days, months, or years) to smooth out volatility and adapt to different investing horizons.
 
-Lastly, sharing the insights derived from the data should prioritize educational and non-exploitative purposes, aligning with ethical research and reporting practices
+#### Generating the Interactive Line Chart
+- **Part 1:** We create the line chart with `fig2 = go.Figure()`. Traces are added for each price line, with assigned values and colors.  
+- **Part 2:** The layout is updated to include:  
+  - A chart title.  
+  - X-axis and y-axis titles.  
+  - A legend title.  
+  - A dark mode template for improved aesthetics.  
+  Finally, the chart is displayed using `fig2.show()`.
+
+---
+
+### 4. Key Charts on the Dashboard
+
+1. **Bitcoin Price Over Time**  
+   This chart tracks Bitcoin’s price with adjustable time units (days, months, or years). Switching from days to months or years reduces volatility by displaying fewer data points, accommodating different investor time horizons.
+
+2. **Dollar Change vs. Percentage Change Heatmap**  
+   A dynamic heatmap that adjusts based on the selected timeframe and unit. Given Bitcoin’s evolution from near $0 to over $100,000, the magnitude of dollar and percentage changes varies significantly, making this visualization essential for contextual understanding.
+
+3. **Google Trends Bitcoin Search Interest**  
+   This chart uses data from Google Trends to assign a search interest score to each U.S. state/region based on Bitcoin-related search activity. Nevada notably has the highest score in the country.
+
+---
 
 ## Conclusion 
-Bitcoin has evolved from an experimental digital currency to a globally recognized financial asset. Its value and popularity continue to fluctuate due to its speculative nature, evolving regulations, and the broader adoption of blockchain technology. While its future remains uncertain, Bitcoin remains a cornerstone of the cryptocurrency ecosystem and a symbol of financial decentralization.
+Bitcoin has grown from an experimental digital currency to a globally recognized financial asset, driving innovation in blockchain technology and decentralized finance. While it offers benefits like financial inclusion and privacy, its volatility, environmental impact, and association with unethical activities pose significant risks. As the cryptocurrency landscape evolves, balancing its potential with thoughtful regulation and education will be crucial.
 
-
-##	References for the data source(s)/o	References for any code used that is not your own
+##	References
 
 The use of ChatGPT was essential in creating various lines of code in the Javascript and Jupyter Notebook files. Below is the code for the creation of the heatmap in the Javascript code.
 
