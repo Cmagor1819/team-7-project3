@@ -13,6 +13,7 @@ The purpose of this project is to provide a comprehensive understanding of Bitco
 
 ## Tech Stack and Data / Manipulation
 We used a number of different libraries/tools/resources for this project, including:
+![Slide2](https://github.com/user-attachments/assets/d1f42ab8-ddf7-4931-ac2d-e0993c144faa)
 
 Python
 Jupyter Notebook
@@ -33,9 +34,8 @@ Salary Data comes from Coin Market Cap https://coinmarketcap.com/currencies/bitc
 ETF Data comes from Fidelity https://www.fidelity.com/
 
 Here are some basic illustrations of the data flow from acquision and cleaning to storing.
-
-
-
+![Slide2](https://github.com/user-attachments/assets/d1f42ab8-ddf7-4931-ac2d-e0993c144faa)
+![Slide3](https://github.com/user-attachments/assets/1bff8acb-be71-4751-aad3-37ddb902f223)
 
 
 
