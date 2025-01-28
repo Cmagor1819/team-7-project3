@@ -1,6 +1,43 @@
-# team-7-project3
+# Bitcoin
+## An Analysis of the First Cryptocurrency
 
+## Team Members:
+- Michele Aguilar
+- Riley Laughlin
+- Cameron Magor
+- Mayra Martinez
+
+# Project Overview and Questions
 The purpose of this project is to provide a comprehensive understanding of Bitcoin, its historical price movements, and its potential as an investment. By examining Bitcoin’s origin, technological foundation, and market trends, this project aims to equip readers with the knowledge of bitcoin and what bitcoin is. The project seeks to explore the risks and benefits associated with Bitcoin.
+
+
+## Tech Stack and Data / Manipulation
+We used a number of different libraries/tools/resources for this project, including:
+
+Python
+Jupyter Notebook
+Splinter
+HTML
+CSS
+JavaScript
+Plotly
+Pandas
+MatlotLib
+D3
+PIL
+
+### Website Data:
+
+Salary Data comes from Coin Market Cap https://coinmarketcap.com/currencies/bitcoin/historical-data/
+
+ETF Data comes from Fidelity https://www.fidelity.com/
+
+Here are some basic illustrations of the data flow from acquision and cleaning to storing.
+
+
+
+
+
 
 As a group, we developed a variety of interactive graphs. Below is an explanation of how these graphs were created for this project.
 
@@ -34,3 +71,18 @@ Lastly, sharing the insights derived from the data should prioritize educational
 
 Conclusion 
 Bitcoin has evolved from an experimental digital currency to a globally recognized financial asset. Its value and popularity continue to fluctuate due to its speculative nature, evolving regulations, and the broader adoption of blockchain technology. While its future remains uncertain, Bitcoin remains a cornerstone of the cryptocurrency ecosystem and a symbol of financial decentralization.
+
+## Setup and Dependencies
+
+Before starting, ensure you have the following installed:
+
+- Python (for running a local server)
+- Javascript libraries:
+    - D3.js
+    - Plotly.js
+
+## Running the Analysis
+- Access the dashboard: https://rjlaughlin.github.io/belly-button-challenge/
+- Clone the repository and navigate to the project directory.
+- Install dependencies as shown above.
+- Run the Jupyter Notebook main.iypnb to generate the analyses and visualizations.
