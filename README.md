@@ -123,13 +123,13 @@ data = pd.read_csv(‘/mnt/data/cleaned_data.csv’)
 
 * Extract relevant columns
   
-volume = data[‘volume’]
+* volume = data[‘volume’]
 
-market_cap = data[‘marketCap’]
+* market_cap = data[‘marketCap’]
 
-close_price = data[‘close’]
+* close_price = data[‘close’]
 
-high_price = data[‘high’]
+* high_price = data[‘high’]
 
 * Create scatter plot
 plt.figure(figsize=(10, 8))
