@@ -1,5 +1,4 @@
-# Bitcoin
-## An Analysis of the First Cryptocurrency
+# Bitcoin: An Analysis of the First Cryptocurrency
 
 ## Team Members:
 - Michele Aguilar
@@ -11,21 +10,20 @@
 The purpose of this project is to provide a comprehensive understanding of Bitcoin, its historical price movements, and its potential as an investment. By examining Bitcoin’s origin, technological foundation, and market trends, this project aims to equip readers with the knowledge of bitcoin and what bitcoin is. The project seeks to explore the risks and benefits associated with Bitcoin.
 
 
-## Tech Stack and Data / Manipulation
+## Tech Stack and Data Acquisition / Manipulation
 We used a number of different libraries/tools/resources for this project, including:
 
-
-Python
-Jupyter Notebook
-Splinter
-HTML
-CSS
-JavaScript
-Plotly
-Pandas
-MatlotLib
-D3
-PIL
+- Python
+- Jupyter Notebook
+- Splinter
+- HTML
+- CSS
+- JavaScript
+- Plotly
+- Pandas
+- MatlotLib
+- D3
+- PIL
 
 ### Website Data:
 
@@ -69,16 +67,15 @@ Additionally, the analysis must respect user privacy by refraining from collecti
 
 Lastly, sharing the insights derived from the data should prioritize educational and non-exploitative purposes, aligning with ethical research and reporting practices
 
-Conclusion 
+## Conclusion 
 Bitcoin has evolved from an experimental digital currency to a globally recognized financial asset. Its value and popularity continue to fluctuate due to its speculative nature, evolving regulations, and the broader adoption of blockchain technology. While its future remains uncertain, Bitcoin remains a cornerstone of the cryptocurrency ecosystem and a symbol of financial decentralization.
 
 
+##	References for the data source(s)/o	References for any code used that is not your own
 
+The use of ChatGPT was essential in creating various lines of code in the Javascript file. Below is the code the creation of the heatmap.
 
-o	References for the data source(s)/o	References for any code used that is not your own
-
-The use of ChatGPT was essential in creating various lines of code in the 
-Javascript file. Below is the code the creation of the heatmap.
+``` javascript
 * const percentRange = [
   Math.min(...percentChange.filter((val) => val !== null)),
   Math.max(...percentChange.filter((val) => val !== null)),
@@ -117,6 +114,7 @@ binWidthX),
 binWidthY),
   type: "heatmap",
   hoverongaps: false,
+```
 
 * Load the data
 data = pd.read_csv(‘/mnt/data/cleaned_data.csv’)
@@ -198,7 +196,7 @@ Before starting, ensure you have the following installed:
     - Plotly.js
 
 ## Running the Analysis
-- Access the dashboard: https://rjlaughlin.github.io/belly-button-challenge/
+- Access the dashboard: https://cmagor1819.github.io/team-7-project3/
 - Clone the repository and navigate to the project directory.
 - Install dependencies as shown above.
 - Run the Jupyter Notebook main.iypnb to generate the analyses and visualizations.
