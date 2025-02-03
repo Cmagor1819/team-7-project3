@@ -139,7 +139,7 @@ binWidthY),
   hoverongaps: false,
 ```
 
-Below is the code for the creation of the candlestick visualization.
+LLMs such as ChatGPT were used in the following Python code:
 ```python
 #Load the data
 data = pd.read_csv(‘/mnt/data/cleaned_data.csv’)
